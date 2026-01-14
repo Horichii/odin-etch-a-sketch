@@ -1,0 +1,21 @@
+
+#container {
+    margin: 0 auto;
+    max-width: 960px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.box {
+    border: 1px solid #8e8e8e; 
+    box-sizing: border-box;
+    background-color: white; 
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
