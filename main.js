@@ -4,7 +4,6 @@ container.id = "container";
 
 const buttons = document.createElement("div");
 buttons.classList.add("buttons");
-
 const generateBtn = document.createElement("button");
 generateBtn.id = "enterSquares";
 const resetBtn = document.createElement("button");
@@ -22,27 +21,29 @@ let input = 16;
 
 generateGrid (input);
 
-resetBtn.addEventListener("click", (e) => {
-    generateGrid(input);
+buttons.addEventListener ("click", (e) => {
 
-})
+    switch (e.target.id) {
+        case "resetBtn" :
+            generateGrid(input);
+        break;
+        
+        case "enterSquares" :
+            while (true) {
+            input = prompt("Enter Number of Squares per side (100 limit)", "");
 
-generateBtn.addEventListener("click", (e) => {
+            if (input === null) return;
 
-    while (true) {
-        input = prompt("Enter Number of Squares per side (100 limit)", "");
+            if (isNaN(input)) continue;
 
-        if (input === null) return;
-
-        if (isNaN(input)) continue;
-
-        input = Number(input);
-        if (Number.isInteger(input) && (input <= 100 && input >= 0)) {
-            break;
-        }
-    }
-    generateGrid(input);
-})
+            input = Number(input);
+                if (Number.isInteger(input) && (input <= 100 && input >= 0)) {
+                break;
+                }
+            }
+                generateGrid(input);
+            }
+    });
 
 function generateGrid(input) {
 
